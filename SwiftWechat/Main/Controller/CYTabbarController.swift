@@ -1,5 +1,5 @@
 //
-//  WBTabbarController.swift
+//  CYTabbarController.swift
 //  SwiftWechat
 //
 //  Created by Charles on 2017/3/6.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBTabbarController: UITabBarController {
+class CYTabbarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,10 +17,10 @@ class WBTabbarController: UITabBarController {
     }
     
     private func addChilds() {
-        addChildVc(childVc: WBChatListController.classForCoder(), title: "微信", image: "wb_tabbar_chatList")
-        addChildVc(childVc: WBContactListController.classForCoder(), title: "通讯录", image: "wb_tabbar_contacts")
-        addChildVc(childVc: WBDiscoveyController.classForCoder(), title: "发现", image: "wb_tabbar_discovery")
-        addChildVc(childVc: WBProfileController.classForCoder(), title: "我", image: "wb_tabbar_profile")
+        addChildVc(childVc: CYChatListController.classForCoder(), title: "微信", image: "cy_tabbar_chatList")
+        addChildVc(childVc: CYContactListController.classForCoder(), title: "通讯录", image: "cy_tabbar_contacts")
+        addChildVc(childVc: CYDiscoveyController.classForCoder(), title: "发现", image: "cy_tabbar_discovery")
+        addChildVc(childVc: CYProfileController.classForCoder(), title: "我", image: "cy_tabbar_profile")
     }
     
     private func addChildVc(childVc: AnyClass, title: String, image: String) {
@@ -31,7 +31,7 @@ class WBTabbarController: UITabBarController {
         vc.tabBarItem.selectedImage = UIImage(named: image + "_selected")?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.black.withAlphaComponent(0.5)], for: .normal)
         vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(hue:0.37, saturation:1.00, brightness:0.74, alpha:1.00)], for: .selected)
-        let nav = WBBaseNavigationController(rootViewController: vc)
+        let nav = CYBaseNavigationController(rootViewController: vc)
         addChildViewController(nav)
     } 
     

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
-        self.window?.rootViewController = WBTabbarController()
+        self.window?.rootViewController = CYTabbarController()
         self.window?.makeKeyAndVisible()
         
         application.statusBarStyle = .lightContent

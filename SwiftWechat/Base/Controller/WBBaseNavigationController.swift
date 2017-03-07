@@ -1,5 +1,5 @@
 //
-//  WBBaseNavigationController.swift
+//  CYBaseNavigationController.swift
 //  SwiftWechat
 //
 //  Created by Charles on 2017/3/6.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBBaseNavigationController: UINavigationController {
+class CYBaseNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,7 @@ class WBBaseNavigationController: UINavigationController {
     }
     
     private func setup() {
-        let image = UIImage(named: "wb_nav_background")
+        let image = UIImage(named: "cy_nav_background")
         self.navigationBar.setBackgroundImage(image, for: .any, barMetrics: .default)
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white,
                                                   NSFontAttributeName : UIFont.boldSystemFont(ofSize: 15)]
@@ -25,7 +25,7 @@ class WBBaseNavigationController: UINavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if self.viewControllers.count > 0 {
             let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-            btn.setImage(UIImage(named: "wb_nav_item_back"), for: .normal)
+            btn.setImage(UIImage(named: "cy_nav_item_back"), for: .normal)
             btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
             btn.tintColor = UIColor.white
             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)

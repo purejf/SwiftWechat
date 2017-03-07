@@ -1,5 +1,5 @@
 //
-//  WBDiscoveyController.swift
+//  CYChatListController.swift
 //  SwiftWechat
 //
 //  Created by Charles on 2017/3/6.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBDiscoveyController: UITableViewController {
+class CYChatListController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

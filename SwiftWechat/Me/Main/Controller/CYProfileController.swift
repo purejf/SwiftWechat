@@ -1,5 +1,5 @@
 //
-//  WBProfileController.swift
+//  CYProfileController.swift
 //  SwiftWechat
 //
 //  Created by Charles on 2017/3/6.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CYProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     static let cellID = "cellID"
     
@@ -18,15 +18,15 @@ class WBProfileController: UIViewController, UITableViewDelegate, UITableViewDat
                   ["表情"],
                   ["设置"]]
     
-    let images = [["wb_pro_album", "wb_pro_favorite", "wb_pro_wallet", "wb_pro_wallet"],
-                  ["wb_pro_setting"],
-                  ["wb_pro_setting"]]
+    let images = [["cy_pro_album", "cy_pro_favorite", "cy_pro_wallet", "cy_pro_wallet"],
+                  ["cy_pro_setting"],
+                  ["cy_pro_setting"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.tableView)
-        self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: WBProfileController.cellID)
-        self.tableView.register(WBProfileHeaderCell.classForCoder(), forCellReuseIdentifier: WBProfileController.headerCellID)
+        self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: CYProfileController.cellID)
+        self.tableView.register(CYProfileHeaderCell.classForCoder(), forCellReuseIdentifier: CYProfileController.headerCellID)
     }
     
     private lazy var tableView: UITableView = {
@@ -42,7 +42,7 @@ class WBProfileController: UIViewController, UITableViewDelegate, UITableViewDat
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource
-extension WBProfileController {
+extension CYProfileController {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.titles.count + 1
@@ -66,10 +66,10 @@ extension WBProfileController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: WBProfileController.headerCellID) as! WBProfileHeaderCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CYProfileController.headerCellID) as! CYProfileHeaderCell
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: WBProfileController.cellID)
+            let cell = tableView.dequeueReusableCell(withIdentifier: CYProfileController.cellID)
             cell?.textLabel?.font = UIFont.systemFont(ofSize: 13)
             cell?.accessoryType = .disclosureIndicator
             let _titles = self.titles[indexPath.section - 1]

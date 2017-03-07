@@ -1,5 +1,5 @@
 //
-//  WBProfileHeaderCell.swift
+//  CYProfileHeaderCell.swift
 //  SwiftWechat
 //
 //  Created by Charles on 2017/3/6.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class WBProfileHeaderCell: UITableViewCell {
+class CYProfileHeaderCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
