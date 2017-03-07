@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CYBaseNavigationController: UINavigationController {
+class CYBaseNavigationController: UINavigationController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,27 +16,20 @@ class CYBaseNavigationController: UINavigationController {
     }
     
     private func setup() {
+        self.interactivePopGestureRecognizer?.delegate = self
         let image = UIImage(named: "cy_nav_background")
         self.navigationBar.setBackgroundImage(image, for: .any, barMetrics: .default)
+        self.navigationBar.barStyle = .blackTranslucent
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white,
-                                                  NSFontAttributeName : UIFont.boldSystemFont(ofSize: 15)]
+                                                  NSFontAttributeName : UIFont.boldSystemFont(ofSize: 14)]
         self.navigationBar.tintColor = UIColor.white
     }
-    
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if self.viewControllers.count > 0 {
-            let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-            btn.setImage(UIImage(named: "cy_nav_item_back"), for: .normal)
-            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
-            btn.tintColor = UIColor.white
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
-        } else {
-            viewController.navigationItem.leftBarButtonItem = nil
-        }
-        super.pushViewController(viewController, animated: animated)
-    }
-    
-    @objc private func btnClick() {
-        self.navigationController!.popViewController(animated: true)
+}
+
+extension UINavigationItem {
+    func setRightItem(rightItem: UIBarButtonItem) {
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = -10
+        self.rightBarButtonItems = [space, rightItem]
     }
 }
