@@ -20,6 +20,7 @@ class CYBaseNavigationController: UINavigationController {
         self.navigationBar.setBackgroundImage(image, for: .any, barMetrics: .default)
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white,
                                                   NSFontAttributeName : UIFont.boldSystemFont(ofSize: 15)]
+        self.navigationBar.tintColor = UIColor.white
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

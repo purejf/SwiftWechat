@@ -4,15 +4,20 @@
 //
 //  Created by Charles on 2017/3/6.
 //  Copyright © 2017年 Charles. All rights reserved.
-//
+// 会话列表
 
 import UIKit
 
 class CYChatListController: UITableViewController {
 
+    static let cellID = "cellID"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.tableFooterView = UIView()
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 5, 0, 0)
+        self.tableView.register(CYChatListCell.classForCoder(), forCellReuseIdentifier: CYChatListController.cellID)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,23 +34,23 @@ class CYChatListController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 10
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: CYChatListController.cellID, for: indexPath) as! CYChatListCell
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
 
     /*
     // Override to support conditional editing of the table view.
