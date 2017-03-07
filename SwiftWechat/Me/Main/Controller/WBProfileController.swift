@@ -12,15 +12,21 @@ class WBProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     
     static let cellID = "cellID"
     
+    static let headerCellID = "headerCellID"
+    
     let titles = [["相册", "收藏", "钱包", "卡包"],
                   ["表情"],
                   ["设置"]]
     
+    let images = [["wb_pro_album", "wb_pro_favorite", "wb_pro_wallet", "wb_pro_wallet"],
+                  ["wb_pro_setting"],
+                  ["wb_pro_setting"]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.addSubview(self.tableView)
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: WBProfileController.cellID)
+        self.tableView.register(WBProfileHeaderCell.classForCoder(), forCellReuseIdentifier: WBProfileController.headerCellID)
     }
     
     private lazy var tableView: UITableView = {
@@ -35,7 +41,9 @@ class WBProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     }()
 }
 
+// MARK: UITableViewDelegate, UITableViewDataSource
 extension WBProfileController {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.titles.count + 1
     }
@@ -57,19 +65,25 @@ extension WBProfileController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: WBProfileController.cellID)
         if indexPath.section == 0 {
-            cell?.textLabel?.text = "Charles"
+            let cell = tableView.dequeueReusableCell(withIdentifier: WBProfileController.headerCellID) as! WBProfileHeaderCell
+            return cell
         } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: WBProfileController.cellID)
             cell?.textLabel?.font = UIFont.systemFont(ofSize: 13)
             cell?.accessoryType = .disclosureIndicator
             let _titles = self.titles[indexPath.section - 1]
             cell?.textLabel?.text = _titles[indexPath.row]
+            let _images = self.images[indexPath.section - 1]
+            cell?.imageView?.image = UIImage(named: _images[indexPath.row])
+            return cell!
         }
-        return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 70
+        }
         return 44
     }
     

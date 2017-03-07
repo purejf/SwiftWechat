@@ -9,27 +9,33 @@
 import UIKit
 
 class WBBaseNavigationController: UINavigationController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setup()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setup() {
+        let image = UIImage(named: "wb_nav_background")
+        self.navigationBar.setBackgroundImage(image, for: .any, barMetrics: .default)
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white,
+                                                  NSFontAttributeName : UIFont.boldSystemFont(ofSize: 15)]
     }
-    */
-
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if self.viewControllers.count > 0 {
+            let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+            btn.setImage(UIImage(named: "wb_nav_item_back"), for: .normal)
+            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
+            btn.tintColor = UIColor.white
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
+        } else {
+            viewController.navigationItem.leftBarButtonItem = nil
+        }
+        super.pushViewController(viewController, animated: animated)
+    }
+    
+    @objc private func btnClick() {
+        self.navigationController!.popViewController(animated: true)
+    }
 }

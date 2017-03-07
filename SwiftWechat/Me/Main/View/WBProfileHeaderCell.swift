@@ -1,5 +1,5 @@
 //
-//  WBProfileHeaderView.swift
+//  WBProfileHeaderCell.swift
 //  SwiftWechat
 //
 //  Created by Charles on 2017/3/6.
@@ -9,10 +9,11 @@
 import UIKit
 import SnapKit
 
-class WBProfileHeaderView: UIView {
+class WBProfileHeaderCell: UITableViewCell {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.accessoryType = .disclosureIndicator
         setup()
     }
     
@@ -21,23 +22,35 @@ class WBProfileHeaderView: UIView {
     }
     
     private func setup() {
-        addSubview(self.img)
-        addSubview(self.nameL)
-        addSubview(self.wechatL)
-        addSubview(self.codeImg)
+        self.contentView.addSubview(self.img)
+        self.contentView.addSubview(self.nameL)
+        self.contentView.addSubview(self.wechatL)
+        self.contentView.addSubview(self.codeImg)
         
         self.img.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
             make.top.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
-            make.width.equalTo(make.height as! ConstraintRelatableTarget)
+            make.width.equalTo(self.img.snp.height)
         }
         
         self.nameL.snp.makeConstraints { (make) in
             make.left.equalTo(self.img.snp.right).offset(10)
-            make.top.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(15)
             make.height.equalTo(15)
             make.right.equalToSuperview().offset(-10)
+        }
+        
+        self.wechatL.snp.makeConstraints { (make) in
+            make.left.equalTo(self.img.snp.right).offset(10)
+            make.top.equalTo(self.nameL.snp.bottom).offset(10)
+            make.height.equalTo(15)
+        }
+        
+        self.codeImg.snp.makeConstraints { (make) in
+            make.right.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.size.equalTo(CGSize(width: 24, height: 24))
         }
     }
     
@@ -57,11 +70,13 @@ class WBProfileHeaderView: UIView {
     private lazy var wechatL: UILabel = {
         let wechatL = UILabel()
         wechatL.font = UIFont.systemFont(ofSize: 13)
+        wechatL.text = "微信号：theseaineye"
         return wechatL
     }()
     
     private lazy var codeImg: UIImageView = {
         let codeImg = UIImageView()
+        codeImg.backgroundColor = UIColor.lightGray
         return codeImg
     }()
 }
