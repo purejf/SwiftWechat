@@ -17,7 +17,9 @@ class CYChatListController: UITableViewController {
 
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorInset = UIEdgeInsetsMake(0, 5, 0, 0)
+        self.tableView.rowHeight = 50
         self.tableView.register(CYChatListCell.classForCoder(), forCellReuseIdentifier: CYChatListController.cellID)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,10 +49,7 @@ class CYChatListController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: CYChatListController.cellID, for: indexPath) as! CYChatListCell
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
+     
 
     /*
     // Override to support conditional editing of the table view.

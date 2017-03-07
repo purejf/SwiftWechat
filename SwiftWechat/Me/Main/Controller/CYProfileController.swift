@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CYProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CYProfileController: UITableViewController {
     
     static let cellID = "cellID"
     
@@ -24,31 +24,18 @@ class CYProfileController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(self.tableView)
+        self.tableView.sectionFooterHeight = 8
+        self.tableView.sectionHeaderHeight = 8
+        self.tableView.tableFooterView = UIView()
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: CYProfileController.cellID)
         self.tableView.register(CYProfileHeaderCell.classForCoder(), forCellReuseIdentifier: CYProfileController.headerCellID)
     }
     
-    private lazy var tableView: UITableView = {
-        let tb = UITableView(frame: self.view.bounds, style: .grouped)
-        tb.tableFooterView = UIView()
-        tb.showsVerticalScrollIndicator = false
-        tb.showsHorizontalScrollIndicator = false
-        tb.delegate = self
-        tb.dataSource = self
-        tb.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 0.01))
-        return tb
-    }()
-}
-
-// MARK: UITableViewDelegate, UITableViewDataSource
-extension CYProfileController {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return self.titles.count + 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         }
@@ -56,15 +43,15 @@ extension CYProfileController {
         return _titles.count
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CYProfileController.headerCellID) as! CYProfileHeaderCell
             return cell
@@ -80,14 +67,14 @@ extension CYProfileController {
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 70
         }
         return 44
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
