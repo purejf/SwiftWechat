@@ -13,13 +13,13 @@
 		5612F5EE1E6D68050009FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5612F5D51E6D68040009FE80 /* Assets.xcassets */; };
 		5612F5F21E6D68350009FE80 /* CYTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612F5F11E6D68350009FE80 /* CYTabbarController.swift */; };
 		5612F5F41E6D68800009FE80 /* CYChatListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612F5F31E6D68800009FE80 /* CYChatListController.swift */; };
-		5612F5F61E6D688E0009FE80 /* CYContactListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612F5F51E6D688E0009FE80 /* CYContactListController.swift */; };
 		5612F5F81E6D68A50009FE80 /* CYDiscoveyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612F5F71E6D68A50009FE80 /* CYDiscoveyController.swift */; };
 		5612F6001E6D6AB80009FE80 /* WBBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612F5FF1E6D6AB80009FE80 /* WBBaseNavigationController.swift */; };
 		5612F6021E6D6B3B0009FE80 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5612F6011E6D6B3B0009FE80 /* Info.plist */; };
 		56A8151C1E6D854B00751901 /* CYProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A815191E6D854B00751901 /* CYProfileController.swift */; };
 		56A8151E1E6D855D00751901 /* CYProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8151D1E6D855D00751901 /* CYProfileHeaderCell.swift */; };
 		56A815201E6D881500751901 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A8151F1E6D881500751901 /* SnapKit.framework */; };
+		56A815281E6E560B00751901 /* CYContactListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A815251E6E560B00751901 /* CYContactListController.swift */; };
 		B551961D19D8F7B5BB66A323 /* Pods_SwiftWechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6F13C6F7197AC0AA71CE22 /* Pods_SwiftWechat.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,13 +55,13 @@
 		5612F5D51E6D68040009FE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5612F5F11E6D68350009FE80 /* CYTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYTabbarController.swift; sourceTree = "<group>"; };
 		5612F5F31E6D68800009FE80 /* CYChatListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYChatListController.swift; sourceTree = "<group>"; };
-		5612F5F51E6D688E0009FE80 /* CYContactListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYContactListController.swift; sourceTree = "<group>"; };
 		5612F5F71E6D68A50009FE80 /* CYDiscoveyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYDiscoveyController.swift; sourceTree = "<group>"; };
 		5612F5FF1E6D6AB80009FE80 /* WBBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseNavigationController.swift; sourceTree = "<group>"; };
 		5612F6011E6D6B3B0009FE80 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56A815191E6D854B00751901 /* CYProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYProfileController.swift; sourceTree = "<group>"; };
 		56A8151D1E6D855D00751901 /* CYProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYProfileHeaderCell.swift; sourceTree = "<group>"; };
 		56A8151F1E6D881500751901 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SwiftWechat-bkkhhehdrxmsfhazpgnhwnljfrur/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
+		56A815251E6E560B00751901 /* CYContactListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYContactListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +116,10 @@
 		5612F5A41E6D673D0009FE80 /* SwiftWechat */ = {
 			isa = PBXGroup;
 			children = (
+				56A815231E6E560B00751901 /* ContactList */,
 				5612F6011E6D6B3B0009FE80 /* Info.plist */,
 				5612F5FB1E6D6AA60009FE80 /* Base */,
 				5612F5D91E6D68040009FE80 /* ChatList */,
-				5612F5DD1E6D68040009FE80 /* ContactList */,
 				5612F5E11E6D68040009FE80 /* Discovery */,
 				5612F5E51E6D68040009FE80 /* Main */,
 				5612F5E91E6D68040009FE80 /* Me */,
@@ -182,39 +182,6 @@
 			sourceTree = "<group>";
 		};
 		5612F5DC1E6D68040009FE80 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5612F5DD1E6D68040009FE80 /* ContactList */ = {
-			isa = PBXGroup;
-			children = (
-				5612F5DE1E6D68040009FE80 /* Controller */,
-				5612F5DF1E6D68040009FE80 /* Model */,
-				5612F5E01E6D68040009FE80 /* View */,
-			);
-			name = ContactList;
-			path = contactList;
-			sourceTree = "<group>";
-		};
-		5612F5DE1E6D68040009FE80 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5612F5F51E6D688E0009FE80 /* CYContactListController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		5612F5DF1E6D68040009FE80 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5612F5E01E6D68040009FE80 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -354,6 +321,38 @@
 			isa = PBXGroup;
 			children = (
 				56A8151D1E6D855D00751901 /* CYProfileHeaderCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56A815231E6E560B00751901 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				56A815241E6E560B00751901 /* Controller */,
+				56A815261E6E560B00751901 /* Model */,
+				56A815271E6E560B00751901 /* View */,
+			);
+			path = ContactList;
+			sourceTree = "<group>";
+		};
+		56A815241E6E560B00751901 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56A815251E6E560B00751901 /* CYContactListController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56A815261E6E560B00751901 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56A815271E6E560B00751901 /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -561,11 +560,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56A815281E6E560B00751901 /* CYContactListController.swift in Sources */,
 				56A8151C1E6D854B00751901 /* CYProfileController.swift in Sources */,
 				5612F5F81E6D68A50009FE80 /* CYDiscoveyController.swift in Sources */,
 				56A8151E1E6D855D00751901 /* CYProfileHeaderCell.swift in Sources */,
 				5612F5F21E6D68350009FE80 /* CYTabbarController.swift in Sources */,
-				5612F5F61E6D688E0009FE80 /* CYContactListController.swift in Sources */,
 				5612F5F41E6D68800009FE80 /* CYChatListController.swift in Sources */,
 				5612F6001E6D6AB80009FE80 /* WBBaseNavigationController.swift in Sources */,
 				5612F5ED1E6D68040009FE80 /* AppDelegate.swift in Sources */,
