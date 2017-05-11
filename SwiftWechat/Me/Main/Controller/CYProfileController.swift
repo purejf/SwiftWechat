@@ -24,9 +24,11 @@ class CYProfileController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = UIColor(hue:0.67, saturation:0.02, brightness:0.96, alpha:1.00)
         self.tableView.sectionFooterHeight = 8
         self.tableView.sectionHeaderHeight = 8
         self.tableView.tableFooterView = UIView()
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 0)
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: CYProfileController.cellID)
         self.tableView.register(CYProfileHeaderCell.classForCoder(), forCellReuseIdentifier: CYProfileController.headerCellID)
     }
@@ -48,6 +50,9 @@ class CYProfileController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == self.titles.count {
+            return 0.01
+        }
         return 10
     }
     
@@ -76,5 +81,14 @@ class CYProfileController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.row {
+        case 0:
+           let info = CYProfileInfoViewController()
+           info.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(info, animated: true)
+        default: break
+            
+        }
     }
 }

@@ -20,6 +20,9 @@
 		5612F5F81E6D68A50009FE80 /* CYDiscoveyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612F5F71E6D68A50009FE80 /* CYDiscoveyController.swift */; };
 		5612F6001E6D6AB80009FE80 /* WBBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612F5FF1E6D6AB80009FE80 /* WBBaseNavigationController.swift */; };
 		5612F6021E6D6B3B0009FE80 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5612F6011E6D6B3B0009FE80 /* Info.plist */; };
+		56258E821EC48985005698A2 /* CYProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56258E811EC48985005698A2 /* CYProfileInfoViewController.swift */; };
+		56258E881EC48A47005698A2 /* CYCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56258E871EC48A47005698A2 /* CYCircleViewController.swift */; };
+		56258E921EC48A9D005698A2 /* CYSelfCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56258E911EC48A9D005698A2 /* CYSelfCircleViewController.swift */; };
 		56A8151C1E6D854B00751901 /* CYProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A815191E6D854B00751901 /* CYProfileController.swift */; };
 		56A8151E1E6D855D00751901 /* CYProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A8151D1E6D855D00751901 /* CYProfileHeaderCell.swift */; };
 		56A815201E6D881500751901 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A8151F1E6D881500751901 /* SnapKit.framework */; };
@@ -66,6 +69,9 @@
 		5612F5F71E6D68A50009FE80 /* CYDiscoveyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYDiscoveyController.swift; sourceTree = "<group>"; };
 		5612F5FF1E6D6AB80009FE80 /* WBBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseNavigationController.swift; sourceTree = "<group>"; };
 		5612F6011E6D6B3B0009FE80 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56258E811EC48985005698A2 /* CYProfileInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYProfileInfoViewController.swift; sourceTree = "<group>"; };
+		56258E871EC48A47005698A2 /* CYCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYCircleViewController.swift; sourceTree = "<group>"; };
+		56258E911EC48A9D005698A2 /* CYSelfCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYSelfCircleViewController.swift; sourceTree = "<group>"; };
 		56A815191E6D854B00751901 /* CYProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYProfileController.swift; sourceTree = "<group>"; };
 		56A8151D1E6D855D00751901 /* CYProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYProfileHeaderCell.swift; sourceTree = "<group>"; };
 		56A8151F1E6D881500751901 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SwiftWechat-bkkhhehdrxmsfhazpgnhwnljfrur/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
@@ -324,6 +330,9 @@
 		5612F5E91E6D68040009FE80 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				56258E891EC48A6D005698A2 /* Self-Circle */,
+				56258E831EC48A38005698A2 /* Circle */,
+				56258E7D1EC48950005698A2 /* Info */,
 				56A815171E6D854B00751901 /* Main */,
 			);
 			path = Me;
@@ -355,6 +364,102 @@
 			sourceTree = "<group>";
 		};
 		5612F5FE1E6D6AA60009FE80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56258E7D1EC48950005698A2 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				56258E7E1EC48950005698A2 /* Controller */,
+				56258E7F1EC48950005698A2 /* Model */,
+				56258E801EC48950005698A2 /* View */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		56258E7E1EC48950005698A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56258E811EC48985005698A2 /* CYProfileInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56258E7F1EC48950005698A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56258E801EC48950005698A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56258E831EC48A38005698A2 /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				56258E841EC48A38005698A2 /* Controller */,
+				56258E851EC48A38005698A2 /* Model */,
+				56258E861EC48A38005698A2 /* View */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
+		56258E841EC48A38005698A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56258E871EC48A47005698A2 /* CYCircleViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56258E851EC48A38005698A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56258E861EC48A38005698A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56258E891EC48A6D005698A2 /* Self-Circle */ = {
+			isa = PBXGroup;
+			children = (
+				56258E8A1EC48A6D005698A2 /* Controller */,
+				56258E8C1EC48A6D005698A2 /* Model */,
+				56258E8D1EC48A6D005698A2 /* View */,
+			);
+			path = "Self-Circle";
+			sourceTree = "<group>";
+		};
+		56258E8A1EC48A6D005698A2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56258E911EC48A9D005698A2 /* CYSelfCircleViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56258E8C1EC48A6D005698A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56258E8D1EC48A6D005698A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -638,8 +743,11 @@
 				5612F5F81E6D68A50009FE80 /* CYDiscoveyController.swift in Sources */,
 				560BAFC71E6EC48F00CE80CB /* CYChatToolbar.swift in Sources */,
 				56A8151E1E6D855D00751901 /* CYProfileHeaderCell.swift in Sources */,
+				56258E821EC48985005698A2 /* CYProfileInfoViewController.swift in Sources */,
 				5612F5F21E6D68350009FE80 /* CYTabbarController.swift in Sources */,
 				5612F6001E6D6AB80009FE80 /* WBBaseNavigationController.swift in Sources */,
+				56258E921EC48A9D005698A2 /* CYSelfCircleViewController.swift in Sources */,
+				56258E881EC48A47005698A2 /* CYCircleViewController.swift in Sources */,
 				560BAFC51E6EC22400CE80CB /* CYChatDetailController.swift in Sources */,
 				560BAFB31E6E61F600CE80CB /* CYContactListCell.swift in Sources */,
 				5612F5ED1E6D68040009FE80 /* AppDelegate.swift in Sources */,
